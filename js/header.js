@@ -28,13 +28,25 @@ var html = `
                     <div class="d-none d-xl-inline-block">
                         <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                             <li>
-                                <a href="#" class="pl-3 pr-3 text-black"><span class="icon-search"></span></a>
+                                <a href="#" class="pl-3 pr-3 text-black">
+                                    <span class="icon-search"></span>
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="pl-3 pr-3 text-black" onclick="myModal()" data-toggle="modal" data-target="#myModal">
+                                <a href="#" class="pl-3 pr-3 text-black" id="signIn" onclick="myModal()" data-toggle="modal" data-target="#myModal">
                                     <span class="icon-user"></span>
                                 </a>
-                            </li>         
+                            </li>
+                            <li>
+                                <a href="customer/user.html" class="pl-3 pr-3 text-black" id="userName">
+                                
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="pl-3 pr-3 text-black" id="signOut" onclick="signOut()">
+                                    <span class="icon-sign-out"></span>
+                                </a>
+                            </li>                            
                         </ul>
                     </div>
                 </div>
