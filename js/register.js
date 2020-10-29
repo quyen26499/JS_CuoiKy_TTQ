@@ -14,27 +14,34 @@ function register() {
 
     let objUser = {
         id : id,
-        name : name,
         email : email,
         pass : pass,
         repass : repass,
-        contact : contact,
-        address : address,
-        img : img
     };
 
-            // var arrUserFilter = arrUser.filter((item, index) => array.indexOf(item) === index);
+    // if (arrUser[email] === "undefined") { // Kiểm tra email tòn tại 
+    //     alert("Account already exists");
+    //     window.location.hash = "register";
+    //     document.getElementById("email").value = "";
+    //     document.getElementById("pass").value = "";
+    //     document.getElementById("repass").value = "";
 
+    // } else 
     if (objUser.pass == objUser.repass) {
         arrUser.push(objUser);
-        var arrUserFilter = arrUser.filter((item, index) => array.indexOf(item) === index);
         localStorage.setItem("user" , JSON.stringify(arrUser));
         alert("Registered successfully");
         window.location.hash = "login";
         console.log(arrUser);
-        btnLogin();
-    } else {
+        getUnique();
+
+    } else if  (obj.pass != obj.repass) {
         alert("Repassword incorrect")
         window.location.hash = "register";
-    }
+    };
+    
 }
+function getUnique() {
+    let uniqueArray = Array.from(new Set(arrUser));
+    console.log(uniqueArray);
+};

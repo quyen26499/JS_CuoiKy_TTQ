@@ -21,11 +21,12 @@ function login() {
                 alert("Login successfully")
                 window.location.href = "tour.html";
                 customer = [
-                {
-                    id: user[i].id,
-                    email: user[i].email
-                }
+                    {
+                        id: user[i].id,
+                        email: user[i].email
+                    }   
                 ];
+                
             } else {
                 alert("Login failed")
                 window.location.hash = "login";
