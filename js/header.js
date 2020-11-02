@@ -79,55 +79,35 @@ function myModal() {
             
                 <div class="modal-body">
                     <form id="register" class="input-group">
-                        <div class="modal-form text-white font-weight-bold pr-5 pl-5 pb-5 w-100">
+                        <div class="modal-form text-white font-weight-bold m-5 w-100">
                             <label>Your email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
+                            <input type="email" id="email" class="form-control input" placeholder="enter your email">
     
-                        <div class="modal-form text-white font-weight-bold pr-5 pl-5 w-100">
                             <label>Your password</label>
-                            <input type="password" id="pass" class="form-control" required>
+                            <input type="password" id="pass" class="form-control input" placeholder="enter your password">
     
                             <label>Re-Enter Your password</label>
-                            <input type="password" id="repass" class="form-control" required>
-    
-                            <div class="modal-form text-white p-4 mt-2">
-                                <input class="form-check-input" type="checkbox" id="checkbox" required>
-                                <label class="white-text form-check-label">Accept the
-                                    <a href="#" class="green-text font-weight-bold" style="color: #0000FF">
-                                        Terms and Conditions
-                                    </a>
-                                </label>
-                            </div>
+                            <input type="password" id="repass" class="form-control input" placeholder="enter your repassword">
                         </div>
 
-                        <div class="row d-flex align-items-center w-100">
-                            <div class="col-md-12 text-center ml-3">
+                        <div class="row d-flex align-items-center w-100 m-3">
+                            <div class="col-md-11 text-center">
                                 <button class="btn btn-light" onclick="register()">Register</button>
                             </div>
                         </div>
                     </form>
                 
                     <form id="login" class="input-group">
-                        <div class="modal-form text-white font-weight-bold pr-5 pl-5 pb-5 w-100">
+                        <div class="modal-form text-white font-weight-bold m-5 w-100">
                             <label>Your email</label>
-                            <input type="email" id="userEmail" class="form-control" required>
-                        </div>
-    
-                        <div class="modal-form text-white font-weight-bold pr-5 pl-5 w-100">
+                            <input type="email" id="userEmail" class="form-control">
+
                             <label>Your password</label>
-                            <input type="password" id="userPass" class="form-control" required>
-    
-                            <div class="modal-form text-white p-4 mt-2">
-                                <input class="form-check-input" type="checkbox" id="rememberMe">
-                                <label class="white-text form-check-label">
-                                    Remember Password
-                                </label>
-                            </div>
+                            <input type="password" id="userPass" class="form-control">
                         </div>
 
                         <div class="row d-flex align-items-center w-100">
-                            <div class="col-md-12 text-center ml-3">
+                            <div class="col-md-11 text-center m-3">
                                 <button class="btn btn-light" onclick="login()">Log in</button>
                             </div>
                         </div>

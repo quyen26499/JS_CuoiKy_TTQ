@@ -11,7 +11,7 @@
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" >
     
     <div id="topNav"></div>
 
@@ -22,27 +22,29 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Tour</h1>
-
+                    <h1 class="m-2">Tour</h1>
+                    
                     <div class="card mb-4">
-                        <div class="card-body">
+                        <div class="card-body">        
+                            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModal">
+                                <i class="fas fa-plus mr-2"></i>Create
+                            </button>
+
                             <div class="table-responsive">
                                 <table class="table table-bordered" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Email</th>
                                             <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Tour</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>Status</th>
-                                            <th>Delete</th>
+                                            <th>Image</th>
+                                            <th>Price</th>
+                                            <th>Date Tour</th>
+                                            <th>Note</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                     
-                                    <tbody id="tour">
+                                    <tbody id="manager-tour">
                                         
                                     </tbody>
                                 </table>
@@ -52,7 +54,89 @@
                 </div>
             </main>
         </div>
+    </div> 
+    <!-- Create Tour -->
+    <div class="modal" id="myModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Tour</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-row">
+                    <div class="modal-form text-dark font-weight-bold m-2 w-100">
+                        <label>Name</label>
+                        <input type="text" id="name" class="form-control input">
+                        
+                        <label>Price</label>
+                        <input type="text" id="price" class="form-control input">
+
+                        <label>Date tour</label>
+                        <input type="text" id="times" class="form-control input">
+                        
+                        <label>Note</label>
+                        <input type="text" id="note" class="form-control input">
+
+                        <label>Image</label>
+                        <input type="file" id="img" class="form-control input">
+                    </div>
+                </form>
+
+                <div class="row d-flex align-items-center w-100 m-3">
+                    <div class="col-md-11 text-center">
+                        <button class="btn btn-dark" onclick="addTour()">Summit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    </div>
+<!-- Update tour
+    <div class="model fade" id="updateTour" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cập Nhật</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form-row">
+                    <div class="col-12">
+                        <input class="form-control" type="text" id="idd" placeholder="id">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input class="form-control" type="text" id="named" placeholder="name">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input class="form-control" type="text" id="imgd" placeholder="img">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input class="form-control" type="number" id="priced" placeholder="giá">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input class="form-control" type="text" id="timesd" placeholder="thời gian">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input class="form-control" type="text" id="noted" placeholder="mã tour">
+                    </div>
+                    <div id="submitUpdate">Cập nhật</div>
+                </form>
+
+            </div>
+            <div class="modal-fooder">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+    </div> -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -65,5 +149,6 @@
 
 <script src="js/topnav.js"></script>
 <script src="js/sidenav.js"></script>
+<script src="js/tour.js"></script>
 </body>
 </html>

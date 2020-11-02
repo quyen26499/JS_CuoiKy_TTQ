@@ -1,6 +1,6 @@
 var html = `
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand ml-5" href="index.html">Admin Page</a>
+        <a class="navbar-brand ml-5" href="admin.html">Admin Page</a>
         
         <ul class="navbar-nav ml-auto mr-md-0">
             <li class="nav-item dropdown">

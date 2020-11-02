@@ -14,7 +14,7 @@ function login() {
     var pass = document.getElementById("userPass").value;
     
     if (email == admin.email && pass == admin.email) {
-        window.location.href = "admin.html";
+        window.location.href = "admin/admin.html";
     } else {
         for (let i in user) {
             if (user[i].email == email && user[i].pass == pass) {
@@ -29,7 +29,6 @@ function login() {
                 
             } else {
                 alert("Login failed")
-                window.location.hash = "login";
             }
         }
     }

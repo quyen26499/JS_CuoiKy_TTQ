@@ -5,7 +5,7 @@ function register() {
     var arrUser = JSON.parse(localStorage.getItem("user")) || [];
     
     for (i = 0; i <= arrUser.length; i++) {
-        id = i;
+        id = i+1;
     }
 
     let email = document.getElementById("email").value;
@@ -19,29 +19,37 @@ function register() {
         repass : repass,
     };
 
-    // if (arrUser[email] === "undefined") { // Kiểm tra email tòn tại 
-    //     alert("Account already exists");
-    //     window.location.hash = "register";
-    //     document.getElementById("email").value = "";
-    //     document.getElementById("pass").value = "";
-    //     document.getElementById("repass").value = "";
+    for (let i in arrUser) {
+        var checkEmail = arrUser[i].email;
+    }
 
-    // } else 
-    if (objUser.pass == objUser.repass) {
-        arrUser.push(objUser);
-        localStorage.setItem("user" , JSON.stringify(arrUser));
-        alert("Registered successfully");
-        window.location.hash = "login";
-        console.log(arrUser);
-        getUnique();
+    if (email == checkEmail) {
+        alert("Account is exist!!!")
 
-    } else if  (obj.pass != obj.repass) {
-        alert("Repassword incorrect")
-        window.location.hash = "register";
-    };
-    
+    }
+    else if (email != checkEmail) {
+
+        var x = document.getElementsByClassName("input");
+        
+        var count;
+
+        for (var i = 0; i < x.length; i++) {
+            if (x[i].value == "") {
+                count++;
+                alert("Please " + x[i].placeholder);
+
+            } else {
+                count = 0;
+            }
+        }  
+
+        if (objUser.pass == objUser.repass && count == 0) {
+            arrUser.push(objUser);
+            localStorage.setItem("user", JSON.stringify(arrUser));
+            alert("Register successfully!!!");
+        } else if (objUser.pass != objUser.repass && count != 0){
+            alert("Repassword wrong!!!");
+        }
+    }
 }
-function getUnique() {
-    let uniqueArray = Array.from(new Set(arrUser));
-    console.log(uniqueArray);
-};
+
