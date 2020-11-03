@@ -26,9 +26,10 @@
     <link rel="stylesheet" href="hidden/css/style.css">
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/styleTour.css">
     
 </head>
-<body onload="onloadIndex()">
+<body onload="functionBooking(); onloadIndex()">
 
 <div class="site-wrap">
 
@@ -38,98 +39,24 @@
 
     <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5"></div>  
 
-    <div class="site-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/01-greece.jpg" alt="Image" class="img-fluid">
-
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$590</del> <span class="mx-1 text-white ">&mdash;</span> $120</strong>
-                            <h3 class="unit-1-heading">Santorini, Greece</h3>
-                        </div>
-                    </a>
-                </div>
-                
-                <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/02-rome.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$390</del> <span class="mx-1 text-white ">&mdash;</span> $100</strong>
-                            <h3 class="unit-1-heading">Rome, Italy</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/01-greece.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$590</del> <span class="mx-1 text-white ">&mdash;</span> $120</strong>
-                            <h3 class="unit-1-heading">Santorini, Greece</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/02-rome.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$390</del> <span class="mx-1 text-white ">&mdash;</span> $100</strong>
-                            <h3 class="unit-1-heading">Rome, Italy</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/03-japan.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$490</del> <span class="mx-1 text-white ">&mdash;</span> $110</strong>
-                            <h3 class="unit-1-heading">Mount Fuji, Japan</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/04-dubai.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$320</del> <span class="mx-1 text-white ">&mdash;</span> $70</strong>
-                            <h3 class="unit-1-heading">Camels, Dubai</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/05-london.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$290</del> <span class="mx-1 text-white ">&mdash;</span> $50</strong>
-                            <h3 class="unit-1-heading">Elizabeth Tower, London</h3>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <a href="#" class="unit-1 text-center">
-                        <img src="images/06-australia.jpg" alt="Image" class="img-fluid">
-                        
-                        <div class="unit-1-text">
-                            <strong class="text-primary mb-2 d-block"><del class="text-white">$2,500</del> <span class="mx-1 text-white ">&mdash;</span> $500</strong>
-                            <h3 class="unit-1-heading">Opera House, Australia</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>    
+    <div class="container-fluid" id="tour">
+        <section class="section-tour">
+            <!-- title -->
+        <div class="title-wrapper" id="title-tour">
+          <h1 class="title">DISCOUNT TOUR</h1>
+        </div>
+        <!-- end of title -->
+        <div class="title-box-tour" >
+          <ul class="row nav nav-tab" id="showtour">
+  
+          </ul>
+        </div>
+        <div class="row" id="section-tour-show">
+            
+        </div>
+        
+        </section>
+        
     </div>
     
     <p id="footer"></p>
@@ -154,6 +81,8 @@
 <script src="js/register.js"></script>
 <script src="js/login.js"></script>
 <script src="js/index.js"></script>
+<script src="js/discount.js"></script>
+
     
 </body>
 </html>

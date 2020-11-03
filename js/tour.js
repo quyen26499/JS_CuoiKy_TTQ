@@ -11,8 +11,8 @@ function getInfo() {
   const listTour = JSON.parse(localStorage.getItem('listTour'));
 
   const listTourChoice = listTour.filter(data => {
-    if (data.name == destination && data.datetour == person) {
-      console.log(destination, person)
+    if (data.name == destination ) {
+      console.log(destination )
       return true;
 
     }
