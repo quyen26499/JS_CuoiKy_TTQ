@@ -28,7 +28,7 @@ function productAdmin(){
 
 function addTour(){
    var Tour = {
-       id:"SP" + parseInt (tour.length+1),
+       id:,
        name: document.getElementById("name").value,
        img: document.getElementById("img").value,
        price: document.getElementById("price").value,
