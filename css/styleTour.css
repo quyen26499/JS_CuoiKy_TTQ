@@ -1,0 +1,74 @@
+.dash {
+    margin: 20px 65px;
+}
+
+.icon {
+    width: 100%;
+    padding: 5px;
+    background-color:silver;
+    border-radius: 5px;
+    color:#666;
+}
+.box label {
+    margin-left: -15px;
+}
+
+.box button {
+    margin-left: 45%;
+}
+
+
+.bottom {
+    margin: 50px 65px;
+}
+
+.bottom h3 {
+    font-weight: bold;
+}
+
+.bottom hr {
+    background-color: red;
+    height: 2px;
+}
+
+.bottom .single{
+    width: 25%;
+    float: left;
+}
+
+.product {
+    background: #ffffff;
+    border: solid 2px #e6e6e6;
+    margin-bottom: 30px;
+}
+
+.product-img .img-responsive {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.product-text h6 {
+    text-align: center;
+}
+
+.product-text p {
+    text-align: center;
+    color: red;
+}
+
+.product-button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-button button, .form-group.row button{
+    padding: 5px;
+    border : 2px solid red;
+    border-radius: 3px;
+    color: red;
+}
+.title{
+    text-align: center;
+    color: black;
+}

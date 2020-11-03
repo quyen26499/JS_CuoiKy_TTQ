@@ -1,31 +1,4 @@
-function productAdmin(){
-   
-   var listtour1 = "";
-   for (let i = 0; i< tour.length;i++){
-       var listtour1 ="<tr >";
-       listtour1 += "<td>" + tour[i].id + "</td>";
-       listtour1 += "<td>" +tour[i].name + "</td>";
-       listtour1 +=
-         "<td>" +
-         `<img src="${tour[i].img}" style="width: 80px; height: 80px"/>` +
-         "</td>";
-       listtour1 += "<td>" + tour[i].price+"₫" + "</td>";
-       listtour1 += "<td>" + tour[i].datetour + "</td>";
-       listtour1 += "<td>" + tour[i].note + "</td>";
-       listtour1 +=
-         "<td>" +
-         `<button type="button" onclick="edittour(${tour[i].id})" class="btn btn-success"><i class="fas fa-edit"></i></button>` +
-         "</td>";
-       listtour1 +=
-         "<td>" +
-         `<button type="button" onclick="deletetour(${tour[i].id})" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>` +
-         "</td>";
-       listtour1 += "</tr>";
-       
-       document.getElementById("manager-tour").innerHTML += listtour1;
-   }
-}
-
+tour = JSON.parse(localStorage.getItem('listTour'));
 function addTour(){
    var Tour = {
        id:,
@@ -72,4 +45,32 @@ var submitUpdate = function(i){
    localStorage.setItem('listTour', JSON.stringify(tour));
    window.location.reload();
 
+}
+
+function productAdmin(){
+   
+   var listtour1 = "";
+   for (let i = 0; i< tour.length;i++){
+       var listtour1 ="<tr >";
+       listtour1 += "<td>" + tour[i].id + "</td>";
+       listtour1 += "<td>" +tour[i].name + "</td>";
+       listtour1 +=
+         "<td>" +
+         `<img src="${tour[i].img}" style="width: 80px; height: 80px"/>` +
+         "</td>";
+       listtour1 += "<td>" + tour[i].price+"₫" + "</td>";
+       listtour1 += "<td>" + tour[i].datetour + "</td>";
+       listtour1 += "<td>" + tour[i].note + "</td>";
+       listtour1 +=
+         "<td>" +
+         `<button type="button" onclick="edittour(${tour[i].id})" class="btn btn-success"><i class="fas fa-edit"></i></button>` +
+         "</td>";
+       listtour1 +=
+         "<td>" +
+         `<button type="button" onclick="deletetour(${tour[i].id})" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>` +
+         "</td>";
+       listtour1 += "</tr>";
+       
+       document.getElementById("manager-tour").innerHTML += listtour1;
+   }
 }
