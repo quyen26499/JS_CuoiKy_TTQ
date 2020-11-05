@@ -5,7 +5,7 @@ $(document).ready(() => {
     {
       id: 1,
       title: "How to Plan Your Vacation",
-      image: "images/hero_bg_2.jpg",
+      image: "images/hero_bg_1.jpg",
       author:"Theresa Winston",
       time:"Nov 01, 2020 at 2:00 pm",
       type:"News",
@@ -13,7 +13,7 @@ $(document).ready(() => {
     },
     {
       id: 2,
-      title: "(How to Plan Your Vacation",
+      title: "How to Plan Your Vacation",
       image: "images/hero_bg_2.jpg",
       author:"Theresa Winston",
       time:"Nov 01, 2020 at 2:00 pm",
@@ -42,6 +42,6 @@ $(document).ready(() => {
   };
   const listView = () => {
     mockDataBlog.map((item, index) => {
-      $(".blog_landing").append(blogItem(item));
+      $(".blog_landing").append(blogItem(item, index));
     });
   };
