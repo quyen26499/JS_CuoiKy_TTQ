@@ -1,91 +1,75 @@
-function showTour(){
-    var tour = JSON.parse(localStorage.getItem("listTour")) || [];
+function showBlog(){
+    var blog = JSON.parse(localStorage.getItem("listBlog")) || [];
 
-    for (let i in tour) {
+    for (let i in blog) {
         var html =`
             <tr>
-                <td>${tour[i].id}</td>
-                <td>${tour[i].name}</td>
+                <td>${blog[i].id}</td>
+                <td>${blog[i].title}</td>
                 <td>
-                    <img src="${tour[i].img}" width=50px; height=50px;>
+                    <img src="${blog[i].img}" width=50px; height=50px;>
                 </td>
 
-                <td>${tour[i].price}</td>
-                <td>${tour[i].datetour}</td>
-                <td>${tour[i].note}</td>
+                <td>${blog[i].con}</td>
+                <td>${blog[i].dte}</td>
+                
 
-                <td>		  
-                    <button type="button" onclick="editTour(${tour[i].id})" class="btn btn-success">
+                <td>      
+                    <button type="button" onclick="editBlog(${blog[i].id})" class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
-                <td>		  
-                <button type="button" onclick="deleteTour(${tour[i].id})" class="btn btn-danger">
+                <td>      
+                <button type="button" onclick="deleteBlog(${blog[i].id})" class="btn btn-danger">
                     <i class="fas fa-times"></i>
                 </button>
             </td>
             </tr>
         `;
         
-        document.getElementById("manager-tour").innerHTML += html;
+        document.getElementById("manager-blog").innerHTML += html;
     }
 }
 var id;
-function addTour(){
-var tour = JSON.parse(localStorage.getItem("listTour")) || [];
+function addBlog(){
+var blog = JSON.parse(localStorage.getItem("listBlog")) || [];
 
-for (i = 0; i <= tour.length; i++) {
+for (i = 0; i <= blog.length; i++) {
     id = i+1;
 }
 
-var Tour = {
+var Blog = {
     id: id,
-    name : document.getElementById("name").value,
+    title : document.getElementById("title").value,
     img: document.getElementById("img").value,
-    price: document.getElementById("price").value,
-    times: document.getElementById("times").value,
-    note: document.getElementById("note").value,
+    dte: document.getElementById("dte").value,
+    con: document.getElementById("con").value,
 }
-tour.push(Tour);
-localStorage.setItem('listTour', JSON.stringify(tour));
+blog.push(Blog);
+localStorage.setItem('listBlog', JSON.stringify(blog));
 //Save();
 window.location.reload();
-console.log(tour);
+console.log(blog);
 }
 
-//Xóa Tour 
-var deleteTour = function(i){
-tour.splice(i,1);
-localStorage.setItem('88',JSON.stringify(tour));
+//Xóa Blog 
+var deleteBlog = function(i){
+blog.splice(i,1);
+localStorage.setItem('88',JSON.stringify(blog));
 window.location.reload();
-}
-// Edit Tour 
-var editTour = function(i){
-var k = tour[i];
-document.getElementById("idd").value = k.id;
-document.getElementById("named").value = k.name;
-document.getElementById("imgd").value = k.img;
-document.getElementById("priced").value = k.price;
-document.getElementById("timesd").value = k.times;
-document.getElementById("noted").value = k.note;
-document.getElementById("idd").setAttribute("disabled","disabled");
-document.getElementById("submitUpdate").innerHTML =
-    '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')">Đồng ý</button>'
-
 }
 var submitUpdate = function(i){
-var k = tour[i];
+var k = blog[i];
 k.id= document.getElementById("idd").value;
-k.name= document.getElementById("named").value;
+k.title= document.getElementById("titled").value;
 k.img= document.getElementById("imgd").value;
-k.price= document.getElementById("priced").value;
-k.times= document.getElementById("timesd").value;
-k.note= document.getElementById("noted").value;
+k.con= document.getElementById("cond").value;
+k.dte= document.getElementById("dted").value;
 //document.getElementById("idd").setAttribute("disabled","disabled");
-localStorage.setItem('listTour', JSON.stringify(tour));
+localStorage.setItem('listBlog', JSON.stringify(blog));
 window.location.reload();
 
 }
 
-
+//hi
 

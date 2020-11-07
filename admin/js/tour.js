@@ -1,5 +1,5 @@
 function showTour(){
-    var tour = JSON.parse(localStorage.getItem("tour")) || [];
+    var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 
     for (let i in tour) {
         var html =`
@@ -15,12 +15,12 @@ function showTour(){
                 <td>${tour[i].note}</td>
 
                 <td>		  
-                    <button type="button" onclick="editTour(${i})" class="btn btn-success">
+                    <button type="button" onclick="editTour(${tour[i].id})" class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
                 <td>		  
-                <button type="button" onclick="deleteTour(${i})" class="btn btn-danger">
+                <button type="button" onclick="deleteTour(${tour[i].id})" class="btn btn-danger">
                     <i class="fas fa-times"></i>
                 </button>
             </td>
@@ -31,62 +31,48 @@ function showTour(){
     }
 }
 var id;
+function addTour(){
+var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 
-function addTour() {
-
-    var tour = JSON.parse(localStorage.getItem("tour")) || [];
-    
-    for (i = 0; i <= tour.length; i++) {
-        id = i+1;
-    }
-
-    let name = document.getElementById("name").value;
-    let price = document.getElementById("price").value;
-    let times = document.getElementById("times").value;
-    let note = document.getElementById("note").value;
-    let img = document.getElementById("img").value;
-
-    let objTour = {
-        id : id,
-        name : name,
-        price : price,
-        times : times,
-        note : note,
-        img : img
-    };
-    
-    tour.push(objTour);
-    localStorage.setItem("tour", JSON.stringify(tour));
-    window.location.reload();
+for (i = 0; i <= tour.length; i++) {
+    id = i+1;
 }
 
+var Tour = {
+    id: id,
+    name : document.getElementById("name").value,
+    img: document.getElementById("img").value,
+    price: document.getElementById("price").value,
+    times: document.getElementById("times").value,
+    note: document.getElementById("note").value,
+}
+tour.push(Tour);
+localStorage.setItem('listTour', JSON.stringify(tour));
+//Save();
+window.location.reload();
+console.log(tour);
+}
 
 //Xóa Tour 
-function deleteTour(id) {
-    var tour = JSON.parse(localStorage.getItem("tour")) || [];
-    tour = tour;
-    tour.splice(id, 1)
-    localStorage.setItem("tour", JSON.stringify(tour));
-    window.location.reload();
+var deleteTour = function(i){
+tour.splice(i,1);
+localStorage.setItem('88',JSON.stringify(tour));
+window.location.reload();
 }
-
 // Edit Tour 
-function editTour(id) {
-    var tour = JSON.parse(localStorage.getItem("tour")) || [];
+var editTour = function(i){
+var k = tour[i];
+document.getElementById("idd").value = k.id;
+document.getElementById("named").value = k.name;
+document.getElementById("imgd").value = k.img;
+document.getElementById("priced").value = k.price;
+document.getElementById("timesd").value = k.times;
+document.getElementById("noted").value = k.note;
+document.getElementById("idd").setAttribute("disabled","disabled");
+document.getElementById("submitUpdate").innerHTML =
+    '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')">Đồng ý</button>'
 
-    k = tour;
-    for (i in k) {
-        document.getElementById("named").value = k[i].name;
-        document.getElementById("imgd").value = k[i].img;
-        document.getElementById("priced").value = k[i].price;
-        document.getElementById("timesd").value = k[i].times;
-        document.getElementById("noted").value = k[i].note;
-        document.getElementById("idd").setAttribute("disabled","disabled");
-        document.getElementById("submitUpdate").innerHTML =
-            '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')">Đồng ý</button>'
-    }
 }
-
 var submitUpdate = function(i){
 var k = tour[i];
 k.id= document.getElementById("idd").value;

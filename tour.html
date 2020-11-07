@@ -45,10 +45,51 @@
         <div class="site-section bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 mb-5">
+                    <div class="col-md-7 mb-5">
+
+
+
                         <form action="#" class="p-5 bg-white">
+
+
                             <div class="row form-group">
-                                <div class="col-md-5">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="text-black" for="fname">Họ và tên đệm</label>
+                                    <input type="text" id="fname" class="form-control" placeholder="Họ và tên đệm">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black" for="lname">Tên</label>
+                                    <input type="text" id="lname" class="form-control" placeholder="Tên">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="text-black" for="date">Ngày đi du lịch</label>
+                                    <input type="text" id="date" class="form-control datepicker px-2"
+                                        placeholder="Ngày đi">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black" for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="treatment">Có bao nhiêu người</label>
+                                    <select name="treatment" id="numPeople" class="form-control">
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
                                     <label class="text-black" for="treatment">Nơi đến</label>
                                     <select name="treatment" id="destination" class="form-control">
                                         <option value="0">Nơi khởi hành</option>
@@ -73,30 +114,40 @@
                                         <option value="24">SaPa</option>
                                     </select>
                                 </div>
+                            </div>
 
-                                <div class="col-md-3">
-                                    <label class="text-black" for="date">Ngày đi du lịch</label>
-                                    <input type="text" id="date" class="form-control datepicker px-2"
-                                        placeholder="Ngày đi">
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label class="text-black" for="treatment">Có bao nhiêu người</label>
-                                    <select name="treatment" id="numPeople" class="form-control">
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5+</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-1" style="top:35px">
-                                    <button type="button" onclick="getInfo()" 
-                                        class="btn btn-primary text-white">Tìm</button>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="note">Ghi chú</label>
+                                    <textarea name="note" id="note" cols="30" rows="5" class="form-control"
+                                        placeholder="Viết ghi chú hoặc câu hỏi của bạn ở đây ..."></textarea>
                                 </div>
                             </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+
+                                    <button type="button" onclick="getInfo()"
+                                        class="btn btn-primary py-2 px-4 text-white">Tìm</button>
+                                </div>
+                            </div>
+
+
                         </form>
+                    </div>
+                    <div class="col-md-5">
+
+
+
+                        <div class="p-4 mb-3 bg-white">
+                            <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid mb-4 rounded">
+                            <h3 class="h5 text-black mb-3">Thêm thông tin</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia
+                                architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur?
+                                Fugiat quaerat eos qui, libero neque sed nulla.</p>
+                            <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Tìm hiểu thêm</a></p>
+                        </div>
+
                     </div>
                 </div>
             </div>
