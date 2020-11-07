@@ -21,6 +21,6 @@ function getContact(){
     };
     contact.push(objContact);
     localStorage.setItem("listContact", JSON.stringify(contact));
-    alert("Gửi thành công! Chúng tôi sẽ phản hồi lại sau");
-    window.location.reload();
+    // alert("Gửi thành công! Chúng tôi sẽ phản hồi lại sau");
+    // window.location.reload();
 }
