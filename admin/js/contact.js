@@ -1,28 +1,25 @@
-var user = [];
+var contact = [];
 
 function load() {
-    var user = JSON.parse(localStorage.getItem("user")) || [];
+    var contact = JSON.parse(localStorage.getItem("listContact")) || [];
     
-    if (user.length > 0) {
+    if (contact.length > 0) {
         show();
     }
 }
 
 function show() {
-    var user = JSON.parse(localStorage.getItem("user")) || [];
+    var contact = JSON.parse(localStorage.getItem("listContact")) || [];
 
-    for (let i in user) {
+    for (let i in contact) {
         var html =`
             <tr>
-                <td>${user[i].id}</td>
-                <td>
-                    <img src="image/${user[i].img}" width=50px; height=50px;>
-                </td>
-                <td>${user[i].email}</td>
-                <td>${user[i].name}</td>
-                <td>${user[i].contact}</td>
-                <td>${user[i].address}</td>
-                <td>${user[i].pass}</td>
+                <td>${contact[i].id}</td>
+                <td>${contact[i].fname}</td>
+                <td>${contact[i].lpass}</td>
+                <td>${contact[i].email}</td>
+                <td>${contact[i].subject}</td>
+                <td>${contact[i].message}</td>
 
                 <td>		  
                 <button type="button" onclick="del(${i})" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -30,18 +27,18 @@ function show() {
             </tr>
         `;
         
-        document.getElementById("user").innerHTML += html;
+        document.getElementById("contact").innerHTML += html;
     }
 }
 
 function del(id) {
     var d = confirm("Are you sure?");
     if (d == true) { 
-        var user = JSON.parse(localStorage.getItem("user")) || [];
-        user = user;
-        user.splice(id, 1);
-        localStorage.setItem("user", JSON.stringify(user));
+        var contact = JSON.parse(localStorage.getItem("listContact")) || [];
+        contact = contact;
+        contact.splice(id, 1);
+        localStorage.setItem("listContact", JSON.stringify(contact));
         show();
-        window.location.href = "user.html"
+        window.location.href = "contact.html"
     }
 }

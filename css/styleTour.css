@@ -72,3 +72,13 @@
     text-align: center;
     color: black;
 }
+.cart-icon a{
+    text-decoration: none;
+    color: yellowgreen;
+    font-size: 20px;
+    }
+    
+    .cart-icon a:hover{
+      color: var(--primaryColor);
+      text-decoration: none;
+      }
