@@ -1,24 +1,26 @@
 var id;
-
-function register() {
-
-    var arrUser = JSON.parse(localStorage.getItem("user")) || [];
+function getContact(){
     
-    for (i = 0; i <= arrUser.length; i++) {
+    var contact = JSON.parse(localStorage.getItem("listContact")) || [];    
+    for (i = 0; i <= contact.length; i++) {
         id = i+1;
     }
-
+    let fName = document.getElementById("fname").value;
+    let lName = document.getElementById("lname").value;
     let email = document.getElementById("email").value;
-    let pass = document.getElementById("pass").value;
-    let repass = document.getElementById("repass").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
 
-    let objUser = {
+    let objContact = {
         id : id,
+        fname : fName,
+        lname: lName,
         email : email,
-        pass : pass,
-        repass : repass,
+        subject : subject,
+        message : message,
     };
-
-    
+    contact.push(objContact);
+    localStorage.setItem("listContact", JSON.stringify(contact));
+    alert("Gửi thành công! Chúng tôi sẽ phản hồi lại sau");
+    window.location.reload();
 }
-

@@ -5,6 +5,7 @@ function showTour(){
         var html =`
             <tr>
                 <td>${tour[i].id}</td>
+                <td>${tour[i].name}</td>
                 <td>
                     <img src="${tour[i].img}" width=50px; height=50px;>
                 </td>
@@ -40,7 +41,7 @@ for (i = 0; i <= tour.length; i++) {
 var Tour = {
     id: id,
     name : document.getElementById("name").value,
-    img: img,
+    img: document.getElementById("img").value,
     price: document.getElementById("price").value,
     times: document.getElementById("times").value,
     note: document.getElementById("note").value,
@@ -53,13 +54,13 @@ console.log(tour);
 }
 
 //Xóa Tour 
-var deletetour = function(i){
+var deleteTour = function(i){
 tour.splice(i,1);
 localStorage.setItem('88',JSON.stringify(tour));
 window.location.reload();
 }
 // Edit Tour 
-var edittour = function(i){
+var editTour = function(i){
 var k = tour[i];
 document.getElementById("idd").value = k.id;
 document.getElementById("named").value = k.name;
