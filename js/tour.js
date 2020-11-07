@@ -1,18 +1,18 @@
 function getInfo() {
-  // var firstName = document.getElementById("fname").value;
-  // var lastName = document.getElementById("lname").value;;
+  var firstName = document.getElementById("fname").value;
+  var lastName = document.getElementById("lname").value;;
   var date = document.getElementById("date").value;
-  // var email = document.getElementById("email").value;
+  var email = document.getElementById("email").value;
   var d = document.getElementById("numPeople");
   var person = d.options[d.selectedIndex].text;
   var e = document.getElementById("destination");
   var destination = e.options[e.selectedIndex].text;
-  // var note = document.getElementById("note").value;
-  const listTour = JSON.parse(localStorage.getItem('tour'));
+  var note = document.getElementById("note").value;
+  const listTour = JSON.parse(localStorage.getItem('listTour'));
 
   const listTourChoice = listTour.filter(data => {
-    if (data.name == destination) {
-      console.log(destination)
+    if (data.name == destination ) {
+      console.log(destination )
       return true;
 
     }
@@ -34,32 +34,32 @@ if (localStorage.getItem('listTour') != null) {
   load();
 }
 
-function functionBooking(){
-    var listTour = "";
-    for ( i in tour) {
-      var data =JSON.parse(JSON.stringify(tour[i])) ;
-        listTour += `
+    function functionBooking(){
+        var listTour = "";
+        for ( i in tour) {
+          var data =JSON.parse(JSON.stringify(tour[i])) ;
+           listTour += `
 
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                <a href="#" class="unit-1 text-center">
-                <img src="${tour[i].img}" alt="Image" class="img-fluid">
-                <div class="unit-1-text">
-                  <strong class="text-primary mb-2 d-block">${tour[i].price}</strong>
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <a href="#" class="unit-1 text-center">
+                    <img src="${tour[i].img}" alt="Image" class="img-fluid">
+                    <div class="unit-1-text">
+                      <strong class="text-primary mb-2 d-block">${tour[i].price}</strong>
 
-                    <h3 class="unit-1-heading">${tour[i].img}</h3>
+                        <h3 class="unit-1-heading">${tour[i].img}</h3>
+                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <div class="product-button">                                                         
-                <button onclick="order(${tour[i].id})" class="btn btn-primary py-2 px-4 text-white">
-                    Đặt ngay
-                </button>
-            </div>
+               <div class="product-button">                                                         
+                   <button onclick="order(${tour[i].id})" class="btn btn-primary py-2 px-4 text-white">
+                       Đặt ngay
+                   </button>
+               </div>
 
-    `;
-      document.getElementById("showtour").innerHTML = listTour ;
-      
-}
+       `;
+          document.getElementById("showtour").innerHTML = listTour ;
+          
+    }
     
 }
 function order() {
