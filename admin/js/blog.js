@@ -49,7 +49,7 @@ function addBlog(){
 
     blog.push(objBlog);
     localStorage.setItem('listBlog', JSON.stringify(blog));
-    // window.location.reload();
+    window.location.reload();
     console.log(blog);
 }
 

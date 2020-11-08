@@ -20,15 +20,14 @@ function payment() {
     const data = JSON.parse(localStorage.getItem('tourBookingSuccess'));
     data.push(tour);
     localStorage.setItem('tourBookingSuccess', JSON.stringify(data));
-    localStorage.removeItem('tourBooking');
-    localStorage.removeItem('listTourChoice');
+
     alert('Thanh toán thành công');
     window.location.href = 'index.html';
   } else {
     var tour = JSON.parse(localStorage.getItem('tourBooking'));
     localStorage.setItem('tourBookingSuccess', JSON.stringify(tour));
-    localStorage.removeItem('tourBooking');
-    localStorage.removeItem('listTourChoice');
+
+  
     alert('Thanh toán thành công');
     window.location.href = 'index.html';
   }

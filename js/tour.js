@@ -1,5 +1,8 @@
 function getInfo() {
+
   var date = document.getElementById("date").value;
+
+
   var d = document.getElementById("numPeople");
   var person = d.options[d.selectedIndex].text;
   var e = document.getElementById("destination");

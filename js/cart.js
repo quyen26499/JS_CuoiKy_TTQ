@@ -7,8 +7,10 @@ function onloadCompleted() {
     var row = "<tr class='table-success'>";
     row += "<td> " + img + "</td>";
     row += `<td>Tour ${tour[0].name}</td>`;
-    row += `<td>Tour ${tour[0].datetour} ngày</td>`;
-    row += `<td>Tour ${tour[0].datetour} Người</td>`;
+    row += `<td>${tour[0].datetour} ngày</td>`;
+    row += `<td>
+              <input type="number" value="${tour[0].datetour}" min="0" max="10">
+            </td>`;
     row += `<td>Tour ${tour[0].price} VND </td>`;
     row += "</tr>";
     res1 += row;
