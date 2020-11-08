@@ -87,7 +87,6 @@ k.note= document.getElementById("noted").value;
 //document.getElementById("idd").setAttribute("disabled","disabled");
 localStorage.setItem('listTour', JSON.stringify(tour));
 window.location.reload();
-
 }
 
 

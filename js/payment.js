@@ -8,6 +8,7 @@
   row += "<td> " + img + "</td>";
   row += `<td>Tour ${tour[0].name}</td>`;
   row += `<td>Tour ${tour[0].datetour} ngày</td>`;
+  row += `<td>Tour ${tour[0].datetour} Người</td>`;
   row += `<td>Tour ${tour[0].price} VND </td>`;
   row += "</tr>";
   res1 += row;
