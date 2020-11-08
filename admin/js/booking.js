@@ -1,18 +1,18 @@
 function showTour(){
-    var BookingSuccess = JSON.parse(localStorage.getItem("listBooking")) || [];
+    var booking = JSON.parse(localStorage.getItem("listTourChoice")) || [];
 
-    for (let i in BookingSuccess) {
+    for (let i in booking) {
         var html =`
             <tr>
-                <td>${BookingSuccess[i].id}</td>
-                <td>${BookingSuccess[i].name}</td>
+                <td>${booking[i].id}</td>
+                <td>${booking[i].name}</td>
                 <td>
-                    <img src="${BookingSuccess[i].img}" width=50px; height=50px;>
+                    <img src="${booking[i].img}" width=50px; height=50px;>
                 </td>
 
-                <td>${BookingSuccess[i].price}</td>
-                <td>${BookingSuccess[i].datetour}</td>
-                <td>${BookingSuccess[i].note}</td>
+                <td>${booking[i].price}</td>
+                <td>${booking[i].datetour}</td>
+                <td>${booking[i].note}</td>
 
                 <td>		  
                     <button type="button" onclick="editBooking(${i})" class="btn btn-success">
@@ -33,18 +33,18 @@ function showTour(){
 
 
 
-//Xóa BookingSuccess 
+//Xóa booking 
 function deleteTour(id) {
-    var BookingSuccess = JSON.parse(localStorage.getItem("listTour")) || [];
+    var booking = JSON.parse(localStorage.getItem("listTour")) || [];
 
-    BookingSuccess = BookingSuccess;
-    BookingSuccess.splice(id,1);
-    localStorage.setItem('listTour',JSON.stringify(BookingSuccess));
+    booking = booking;
+    booking.splice(id,1);
+    localStorage.setItem('listTour',JSON.stringify(booking));
     window.location.reload();
 }
-// Edit BookingSuccess 
+// Edit booking 
 var editTour = function(i){
-var k = BookingSuccess[i];
+var k = booking[i];
 document.getElementById("idd").value = k.id;
 document.getElementById("named").value = k.name;
 document.getElementById("imgd").value = k.img;
@@ -57,7 +57,7 @@ document.getElementById("submitUpdate").innerHTML =
 
 }
 var submitUpdate = function(i){
-var k = BookingSuccess[i];
+var k = booking[i];
 k.id= document.getElementById("idd").value;
 k.name= document.getElementById("named").value;
 k.img= document.getElementById("imgd").value;
@@ -65,7 +65,7 @@ k.price= document.getElementById("priced").value;
 k.times= document.getElementById("timesd").value;
 k.note= document.getElementById("noted").value;
 //document.getElementById("idd").setAttribute("disabled","disabled");
-localStorage.setItem('listTour', JSON.stringify(BookingSuccess));
+localStorage.setItem('listTour', JSON.stringify(booking));
 window.location.reload();
 }
 
