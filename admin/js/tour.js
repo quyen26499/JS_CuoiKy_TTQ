@@ -15,12 +15,12 @@ function showTour(){
                 <td>${tour[i].note}</td>
 
                 <td>		  
-                    <button type="button" onclick="editTour(${tour[i].id})" class="btn btn-success">
+                    <button type="button" onclick="editTour(${i})" class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
                 <td>		  
-                <button type="button" onclick="deleteTour(${tour[i].id})" class="btn btn-danger">
+                <button type="button" onclick="deleteTour(${i})" class="btn btn-danger">
                     <i class="fas fa-times"></i>
                 </button>
             </td>
@@ -30,34 +30,37 @@ function showTour(){
         document.getElementById("manager-tour").innerHTML += html;
     }
 }
+
 var id;
 function addTour(){
-var tour = JSON.parse(localStorage.getItem("listTour")) || [];
+    var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 
-for (i = 0; i <= tour.length; i++) {
-    id = i+1;
-}
+    for (i = 0; i <= tour.length; i++) {
+        id = i+1;
+    }
 
-var Tour = {
-    id: id,
-    name : document.getElementById("name").value,
-    img: document.getElementById("img").value,
-    price: document.getElementById("price").value,
-    times: document.getElementById("times").value,
-    note: document.getElementById("note").value,
-}
-tour.push(Tour);
-localStorage.setItem('listTour', JSON.stringify(tour));
-//Save();
-window.location.reload();
-console.log(tour);
+    var Tour = {
+        id: id,
+        name : document.getElementById("name").value,
+        img: document.getElementById("img").value,
+        price: document.getElementById("price").value,
+        times: document.getElementById("times").value,
+        note: document.getElementById("note").value,
+    }
+    tour.push(Tour);
+    localStorage.setItem('listTour', JSON.stringify(tour));
+    window.location.reload();
+    console.log(tour);
 }
 
 //Xóa Tour 
-var deleteTour = function(i){
-tour.splice(i,1);
-localStorage.setItem('88',JSON.stringify(tour));
-window.location.reload();
+function deleteTour(id) {
+    var tour = JSON.parse(localStorage.getItem("listTour")) || [];
+
+    tour = tour;
+    tour.splice(id,1);
+    localStorage.setItem('listTour',JSON.stringify(tour));
+    window.location.reload();
 }
 // Edit Tour 
 var editTour = function(i){
