@@ -50,8 +50,8 @@ if (localStorage.getItem('listTour') != null) {
     }
     
 }
-function order() {
+function order(id) {
     const tourBooking = tour.filter(data => data.id === id)
     localStorage.setItem('tourBooking', JSON.stringify(tourBooking));
-    window.location.href = 'payment.html';
+    alert("Đã thêm tour! Vui lòng kiểm tra giỏ hàng!")
   }
