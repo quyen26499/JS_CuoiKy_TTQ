@@ -1,8 +1,4 @@
 function getInfo() {
-  var firstName = document.getElementById("fname").value;
-  var lastName = document.getElementById("lname").value;;
-  var date = document.getElementById("date").value;
-  var email = document.getElementById("email").value;
   var d = document.getElementById("numPeople");
   var person = d.options[d.selectedIndex].text;
   var e = document.getElementById("destination");

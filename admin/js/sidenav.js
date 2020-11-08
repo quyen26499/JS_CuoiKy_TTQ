@@ -15,9 +15,9 @@ var html = `
                     <div class="sb-nav-link-icon"><i class="fas fa-map-marked-alt"></i></div>
                     Tour
                 </a>
-                <a class="nav-link" href="discount.html">
+                <a class="nav-link" href="booking.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-percent"></i></div>
-                    Discount
+                    Booking
                 </a>
                 <a class="nav-link" href="blog.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-blog"></i></div>
