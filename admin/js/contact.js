@@ -16,7 +16,7 @@ function show() {
             <tr>
                 <td>${contact[i].id}</td>
                 <td>${contact[i].fname}</td>
-                <td>${contact[i].lpass}</td>
+                <td>${contact[i].lname}</td>
                 <td>${contact[i].email}</td>
                 <td>${contact[i].subject}</td>
                 <td>${contact[i].message}</td>
