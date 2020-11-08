@@ -19,8 +19,23 @@ function getContact(){
         subject : subject,
         message : message,
     };
-    contact.push(objContact);
-    localStorage.setItem("listContact", JSON.stringify(contact));
-    alert("Gửi thành công! Chúng tôi sẽ phản hồi lại sau");
-    window.location.reload();
+
+    var x = document.getElementsByClassName("input");
+        
+    var count;
+
+    for (var i = 0; i < x.length; i++) {
+        if (x[i].value == "") {
+            count++;
+        } else {
+            count = 0;
+        }
+    }  
+
+    if (count == 0) {
+        contact.push(objContact);
+        localStorage.setItem("listContact", JSON.stringify(contact));
+        alert("Gửi thành công! Chúng tôi sẽ phản hồi lại sau");
+        window.location.reload();
+    } 
 }
