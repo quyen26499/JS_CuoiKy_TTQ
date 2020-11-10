@@ -1,3 +1,32 @@
+// const userAPI = "http://localhost:3000/user"
+
+// function register() {
+//     let email = document.getElementById("email").value;
+//     let pass = document.getElementById("pass").value;
+//     let repass = document.getElementById("repass").value;
+
+//     var objUser = {
+//         email : email,
+//         pass : pass,
+//         repass : repass
+//     }
+
+//     createUser(objUser);
+// }
+
+// function createUser() {
+//     fetch(`${userAPI}`, {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             email : email,
+//             pass : pass
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+// }
+
 var id;
 
 function register() {
@@ -44,7 +73,12 @@ function register() {
         }  
 
         if (objUser.pass == objUser.repass && count == 0) {
-            arrUser.push(objUser);
+            arrUser.push(objUser = {
+                id : id,
+                email : email,
+                pass : CryptoJS.MD5(pass).toString(),
+                repass : repass,
+            });
             localStorage.setItem("user", JSON.stringify(arrUser));
             alert("Register successfully!!!");
         } else if (objUser.pass != objUser.repass && count != 0){

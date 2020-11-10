@@ -15,7 +15,7 @@ function showTour(){
                 <td>${booking[i].note}</td>
 
                 <td>		  
-                    <button type="button" onclick="editBooking(${i})" class="btn btn-success">
+                    <button type="button" onclick="editBooking(${i})" class="btn btn-success" >
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
