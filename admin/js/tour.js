@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tourContainer = document.querySelector('#tourContainer')
-    const tourURL = `http://localhost:3000/tour`
+    const tourURL = `https://5faa0892b5c645001602a0de.mockapi.io/api/tour`
     const tourForm = document.querySelector('#formTour')
     let allTour = []
 
