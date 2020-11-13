@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Travalers &mdash; Colorlib Website Template</title>
+    <title>Travalers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
     <link rel="stylesheet" href="hidden/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/styleTour.css">
 
     <link rel="stylesheet" href="hidden/css/bootstrap.min.css">
     <link rel="stylesheet" href="hidden/css/magnific-popup.css">
@@ -28,9 +30,9 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/styleTour.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+  
 </head>
-<body onload="onloadIndex() ;functionBooking()">
+<body onload="functionBooking(); onloadIndex()" >
 
 <div class="site-wrap">
 
@@ -38,23 +40,41 @@
 
     <p id="modal"></p>
 
-    <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5"></div>  
-
+    <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5"></div> 
+    
     <div class="container-fluid" id="tour">
-        <section class="section-tour">
-            <!-- title -->
-        <div class="title-wrapper" id="title-tour">
-          <h1 class="title">DISCOUNT TOUR</h1>
-        </div>
-        <!-- end of title -->
-        <div class="cart-icon fixed">
-          <a href="cart.html"><i class="fa fa-credit-card" style="font-size:34px"></i><span class='badge badge-warning' id='lblCartCount'></span> </a>
-        </div>
-        <div class="title-box-tour" >
-          <ul class="row nav nav-tab" id="showtour">
-  
-          </ul>
-        </div>
+      <section class="section-tour">
+          <!-- title -->
+      <div class="title-wrapper" id="title-tour">
+        <h1 class="title">CHI TIẾT TOUR</h1>
+      </div>
+      <!-- end of title -->
+      <div class="title-box-tour" >
+        <ul class="row nav nav-tab" id="detailtour">
+
+        </ul>
+      </div> 
+      <div class="row" id="section-tour-show">
+          
+      </div>
+      
+      </section>
+      
+  </div>
+         
+        <!-- end of modal -->
+         <br>
+       <div class="text">
+         <h3 id="textdemo">DU LỊCH TRONG NƯỚC</h3>
+         <h5 id="textdemo">Du lịch trong nước luôn là lựa chọn tuyệt vời. Đường bờ biển dài hơn 3260km,
+            những khu bảo tồn thiên nhiên tuyệt vời, những thành phố nhộn nhịp,
+             những di tích lịch sử hào hùng, nền văn hóa độc đáo và hấp dẫn,
+              cùng một danh sách dài những món ăn ngon nhất thế giới, Việt Nam có tất cả những điều đó. 
+              Với lịch trình dày, khởi hành đúng thời gian cam kết,
+               Chúng tôi là công ty lữ hành uy tín nhất hiện nay tại Việt Nam, 
+              luôn sẵn sàng phục vụ du khách mọi lúc, mọi nơi,
+            đảm bảo tính chuyên nghiệp và chất lượng dịch vụ tốt nhất thị trường.</h5>
+       </div>
         <div class="row" id="section-tour-show">
             
         </div>
@@ -62,7 +82,7 @@
         </section>
         
     </div>
-    
+
     <p id="footer"></p>
 
 </div>
@@ -82,12 +102,8 @@
 
 <script src="js/header.js"></script>
 <script src="js/footer.js"></script>
-<script src="js/register.js"></script>
-<script src="js/login.js"></script>
-<script src="js/index.js"></script>
-<script src="js/tour.js"></script>
-<script src="js/discount.js"></script>
-
+<Script src="js/booking.js"></Script>
+<script src="js/detail.js"></script>
     
 </body>
 </html>

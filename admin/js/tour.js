@@ -15,7 +15,7 @@ function showTour(){
                 <td>${tour[i].note}</td>
 
                 <td>		  
-                    <button type="button" onclick="editTour(${i})" class="btn btn-success">
+                    <button type="button" data-toggle="modal" data-target="#updateTour" onclick="editTour(${i})"  class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
@@ -63,7 +63,8 @@ function deleteTour(id) {
     window.location.reload();
 }
 // Edit Tour 
-var editTour = function(i){
+function editTour(i){
+    var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 var k = tour[i];
 document.getElementById("idd").value = k.id;
 document.getElementById("named").value = k.name;
@@ -72,11 +73,10 @@ document.getElementById("priced").value = k.price;
 document.getElementById("timesd").value = k.times;
 document.getElementById("noted").value = k.note;
 document.getElementById("idd").setAttribute("disabled","disabled");
-document.getElementById("submitUpdate").innerHTML =
-    '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')">Đồng ý</button>'
+
 
 }
-var submitUpdate = function(i){
+function submitUpdate(){
 var k = tour[i];
 k.id= document.getElementById("idd").value;
 k.name= document.getElementById("named").value;
@@ -86,7 +86,7 @@ k.times= document.getElementById("timesd").value;
 k.note= document.getElementById("noted").value;
 //document.getElementById("idd").setAttribute("disabled","disabled");
 localStorage.setItem('listTour', JSON.stringify(tour));
-window.location.reload();
+
 }
 
 
