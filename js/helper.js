@@ -106,7 +106,7 @@ var tour = [
     price1: 10.000000,
     datetour: 1,
     note: "NDSGN903-006-291020VN",
-    img: "https://travel.com.vn/Images/tour/tfd_200827051707_178318.jpg",
+    img: "https://travel.com.vn/Images/tour/tfd_200727101321_864872.jpg",
   }
 ];
 localStorage.setItem('listTour', JSON.stringify(tour));
