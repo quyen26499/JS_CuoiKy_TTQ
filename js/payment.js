@@ -24,7 +24,7 @@ function payment() {
 
       for (i in user) {
         if (user[i].id == customer[0].id) {
-            if (user.name == "" || user.contact == "" || user.address == "") {
+            if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
                 alert("Cật nhập thông tin tài khoản! ")  
             
             } else {
@@ -32,7 +32,7 @@ function payment() {
                 for (j = 0; j <= tourSuccess.length; j++) {
                     tourComplete = {
                       id: j,
-                      date: listTourChoice.dateGo,
+                      dateGo: listTourChoice.dateGo,
                       person: listTourChoice.person,
                       destination: listTourChoice.destination,
                       // total: total,
@@ -50,7 +50,6 @@ function payment() {
       }
       tourSuccess.push(tourComplete);
       localStorage.setItem("tourSuccess", JSON.stringify(tourSuccess));
-      localStorage.removeItem("listTourChoice");
       localStorage.removeItem("total");
       alert("Đặt  tourthành công! Chúng tôi sẽ sớm liên hệ với bạn, xin cảm ơn");
       window.location.href = "index.html";
