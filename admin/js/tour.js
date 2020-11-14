@@ -250,28 +250,25 @@ function deleteTour(id) {
 // Edit Tour 
 function editTour(i){
     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
-var k = tour[i];
-document.getElementById("idd").value = k.id;
-document.getElementById("named").value = k.name;
-document.getElementById("imgd").value = k.img;
-document.getElementById("priced").value = k.price;
-document.getElementById("timesd").value = k.times;
-document.getElementById("noted").value = k.note;
-document.getElementById("idd").setAttribute("disabled","disabled");
-
-
+    var k = tour[i];
+    document.getElementById("idd").value = k.id;
+    document.getElementById("named").value = k.name;
+    document.getElementById("imgd").value = k.img;
+    document.getElementById("priced").value = k.price;
+    document.getElementById("timesd").value = k.times;
+    document.getElementById("noted").value = k.note;
+    document.getElementById("idd").setAttribute("disabled","disabled");
 }
-function submitUpdate(){
-var k = tour[i];
-k.id= document.getElementById("idd").value;
-k.name= document.getElementById("named").value;
-k.img= document.getElementById("imgd").value;
-k.price= document.getElementById("priced").value;
-k.times= document.getElementById("timesd").value;
-k.note= document.getElementById("noted").value;
-//document.getElementById("idd").setAttribute("disabled","disabled");
-localStorage.setItem('listTour', JSON.stringify(tour));
-
+function submitUpdate() {
+    var k = tour[i];
+    k.id= document.getElementById("idd").value;
+    k.name= document.getElementById("named").value;
+    k.img= document.getElementById("imgd").value;
+    k.price= document.getElementById("priced").value;
+    k.times= document.getElementById("timesd").value;
+    k.note= document.getElementById("noted").value;
+    //document.getElementById("idd").setAttribute("disabled","disabled");
+    localStorage.setItem('listTour', JSON.stringify(tour));
 }
 
 
