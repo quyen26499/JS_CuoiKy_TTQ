@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // function fetchTour(){
 //     fetch('http://localhost:3000/tours')
 //         .then(resp => resp.json())
@@ -184,7 +183,6 @@
 // localStorage.setItem('listTour', JSON.stringify(tour));
 // window.location.reload();
 // }
-=======
 function showTour(){
     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 
@@ -275,7 +273,6 @@ k.note= document.getElementById("noted").value;
 localStorage.setItem('listTour', JSON.stringify(tour));
 
 }
->>>>>>> 70551fc6726567652d73bb0b2ad252fe687a80b2
 
 
 
