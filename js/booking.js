@@ -31,7 +31,7 @@ function functionBooking() {
                    <p class="product-text-price"> 
                    <i class="fa fa-calendar" style="font-size:24px"></i>
                    Thời gian :                           
-                       ${tour[i].datetour} ngày
+                       ${tour[i].date} ngày
                                                 
                    </p>
                    <p class="product-text-price"> 

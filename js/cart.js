@@ -4,14 +4,15 @@ function onloadCompleted() {
     var res1 = '';
     var img = `
       <img src="${tour[0].img}" alt="Card image cap" style="width: 80px; height: 80px;"> `;
-    var row = "<tr class='table-success'>";
+    var row = "<tr>";
     row += "<td> " + img + "</td>";
-    row += `<td>Tour ${tour[0].name}</td>`;
-    row += `<td>${tour[0].datetour} ngày</td>`;
+    row += `<td>${tour[0].name} (${tour[0].date})</td>`;
+    row += `<td>${tour[0].date}</td>`;
     row += `<td>
-              <input type="number" value="${tour[0].datetour}" min="0" max="10">
+              <input type="number" value="${tour[0].datetour}" min="0" max="10" placeholder="Người lớn"><br><br>
+              <input type="number" value="${tour[0].datetour}" min="0" max="10" placeholder="Trẻ em">
             </td>`;
-    row += `<td>Tour ${tour[0].price} VND </td>`;
+    row += `<td>${tour[0].price} VND </td>`;
     row += "</tr>";
     res1 += row;
     document.getElementById("tab").innerHTML = res1;

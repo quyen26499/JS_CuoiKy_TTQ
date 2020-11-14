@@ -4,10 +4,21 @@ function load() {
 
     for (i in user) {
         if (user[i].id == customer[0].id) {
+            if (user[i].address == undefined) {
+                user[i].address = "";
+            } 
+            if (user[i].contact == undefined) {
+                user[i].contact = "";
+            }
+            if (user[i].name == undefined) {
+                user[i].name = "";
+            }
             document.getElementById("name").value = user[i].name;
             document.getElementById("contact").value = user[i].contact;
             document.getElementById("address").value = user[i].address;
         }
+
+
     }
 }
 
@@ -28,4 +39,8 @@ function btnUpdate() {
     localStorage.setItem("user", JSON.stringify(account));
     alert("Update successfully!!!");
     window.location.href = "editUser.html"
+}
+
+function uploadImg(event) {
+    image = URL.createObjectURL(event.target.files[0]);
 }

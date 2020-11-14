@@ -80,13 +80,13 @@ function myModal() {
                 <div class="modal-body">
                     <form id="register" class="input-group">
                         <div class="modal-form text-white font-weight-bold m-5 w-100">
-                            <label>Your email</label>
+                            <label>Email</label>
                             <input type="email" id="email" class="form-control input" placeholder="enter your email">
     
-                            <label>Your password</label>
+                            <label>Password</label>
                             <input type="password" id="pass" class="form-control input" placeholder="enter your password">
     
-                            <label>Re-Enter Your password</label>
+                            <label>Re-Enter password</label>
                             <input type="password" id="repass" class="form-control input" placeholder="enter your repassword">
                         </div>
 

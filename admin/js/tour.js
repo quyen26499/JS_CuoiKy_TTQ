@@ -30,7 +30,7 @@
 //                     </td>
 //                     <td>		  
 //                         <button class="btn btn-danger" data-id=${tour.id} id="deleteTour">
-//                             <i class="fas fa-times"></i>
+//                             <i class="fas fa-date"></i>
 //                         </button>
 //                     </td>
 //                 </tr>
@@ -93,96 +93,6 @@
 // })
 
 
-// function showTour(){
-//     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
-
-//     for (let i in tour) {
-//         var html =`
-//             <tr>
-//                 <td>${tour[i].id}</td>
-//                 <td>${tour[i].name}</td>
-//                 <td>
-//                     <img src="${tour[i].img}" width=50px; height=50px;>
-//                 </td>
-
-//                 <td>${tour[i].price}</td>
-//                 <td>${tour[i].date}</td>
-//                 <td>${tour[i].note}</td>
-
-//                 <td>		  
-//                     <button type="button" onclick="editTour(${i})" class="btn btn-success">
-//                         <i class="fas fa-edit"></i>
-//                     </button>
-//                 </td>
-//                 <td>		  
-    //                 <button type="button" onclick="deleteTour(${i})" class="btn btn-danger">
-    //                     <i class="fas fa-times"></i>
-    //                 </button>
-//                  </td>
-//             </tr>
-//         `;
-        
-//         document.getElementById("manager-tour").innerHTML += html;
-//     }
-// }
-
-// var id;
-// function addTour(){
-//     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
-
-//     for (i = 0; i <= tour.length; i++) {
-//         id = i+1;
-//     }
-
-//     var Tour = {
-//         id: id,
-//         name : document.getElementById("name").value,
-//         img: document.getElementById("img").value,
-//         price: document.getElementById("price").value,
-//         times: document.getElementById("date").value,
-//         note: document.getElementById("note").value,
-//     }
-//     tour.push(Tour);
-//     localStorage.setItem('listTour', JSON.stringify(tour));
-//     window.location.reload();
-//     console.log(tour);
-// }
-
-// //Xóa Tour 
-// function deleteTour(id) {
-//     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
-
-//     tour = tour;
-//     tour.splice(id,1);
-//     localStorage.setItem('listTour',JSON.stringify(tour));
-//     window.location.reload();
-// }
-// // Edit Tour 
-// var editTour = function(i){
-// var k = tour[i];
-// document.getElementById("idd").value = k.id;
-// document.getElementById("named").value = k.name;
-// document.getElementById("imgd").value = k.img;
-// document.getElementById("priced").value = k.price;
-// document.getElementById("timesd").value = k.times;
-// document.getElementById("noted").value = k.note;
-// document.getElementById("idd").setAttribute("disabled","disabled");
-// document.getElementById("submitUpdate").innerHTML =
-//     '<button class="btn btn-outline-danger mt-3" onclick="submitUpdate('+i+')">Đồng ý</button>'
-
-// }
-// var submitUpdate = function(i){
-// var k = tour[i];
-// k.id= document.getElementById("idd").value;
-// k.name= document.getElementById("named").value;
-// k.img= document.getElementById("imgd").value;
-// k.price= document.getElementById("priced").value;
-// k.times= document.getElementById("timesd").value;
-// k.note= document.getElementById("noted").value;
-// //document.getElementById("idd").setAttribute("disabled","disabled");
-// localStorage.setItem('listTour', JSON.stringify(tour));
-// window.location.reload();
-// }
 function showTour(){
     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
 
@@ -196,11 +106,12 @@ function showTour(){
                 </td>
 
                 <td>${tour[i].price}</td>
-                <td>${tour[i].datetour}</td>
+                <td>${tour[i].date}</td>
                 <td>${tour[i].note}</td>
+                <td>${tour[i].status}</td>
 
                 <td>		  
-                    <button type="button" data-toggle="modal" data-target="#updateTour" onclick="editTour(${i})"  class="btn btn-success">
+                    <button type="button" data-toggle="modal" data-target="#updateModal"  class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
@@ -229,12 +140,11 @@ function addTour(){
         name : document.getElementById("name").value,
         img: document.getElementById("img").value,
         price: document.getElementById("price").value,
-        times: document.getElementById("times").value,
+        date: document.getElementById("date").value,
         note: document.getElementById("note").value,
     }
     tour.push(Tour);
     localStorage.setItem('listTour', JSON.stringify(tour));
-    window.location.reload();
     console.log(tour);
 }
 
@@ -255,7 +165,7 @@ function editTour(i){
     document.getElementById("named").value = k.name;
     document.getElementById("imgd").value = k.img;
     document.getElementById("priced").value = k.price;
-    document.getElementById("timesd").value = k.times;
+    document.getElementById("timesd").value = k.date;
     document.getElementById("noted").value = k.note;
     document.getElementById("idd").setAttribute("disabled","disabled");
 }
@@ -265,7 +175,7 @@ function submitUpdate() {
     k.name= document.getElementById("named").value;
     k.img= document.getElementById("imgd").value;
     k.price= document.getElementById("priced").value;
-    k.times= document.getElementById("timesd").value;
+    k.date= document.getElementById("timesd").value;
     k.note= document.getElementById("noted").value;
     //document.getElementById("idd").setAttribute("disabled","disabled");
     localStorage.setItem('listTour', JSON.stringify(tour));
