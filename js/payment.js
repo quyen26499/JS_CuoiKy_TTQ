@@ -24,26 +24,28 @@ function payment() {
 
       for (i in user) {
         if (user[i].id == customer[0].id) {
-            if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
-                alert("Cật nhập thông tin tài khoản! ")  
-            
-            } else {
+            for(e in listTourChoice) {
+                if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
+                    alert("Cật nhập thông tin tài khoản! ")  
                 
-                for (j = 0; j <= tourSuccess.length; j++) {
-                    tourComplete = {
-                      id: j,
-                      dateGo: listTourChoice.dateGo,
-                      person: listTourChoice.person,
-                      destination: listTourChoice.destination,
-                      // total: total,
-                      idCustomer: user[i].id,
-                      email: user[i].email,
-                      name: user[i].name,
-                      contact: user[i].contact,
-                      address: user[i].address,
-                      status: "Đang chờ xử lý",
-                      isActive: false,
-                    };
+                } else {
+                    
+                    for (j = 0; j <= tourSuccess.length; j++) {
+                        tourComplete = {
+                          id: j,
+                          dateGo: listTourChoice[e].dateGo,
+                          person: listTourChoice[e].person,
+                          destination: listTourChoice[e].destination,
+                          // total: total,
+                          idCustomer: listTourChoice[e].id,
+                          email: user[i].email,
+                          name: user[i].name,
+                          contact: user[i].contact,
+                          address: user[i].address,
+                          status: "Đang chờ xử lý",
+                          isActive: false,
+                        };
+                    }
                 }
             }
         }
@@ -51,6 +53,6 @@ function payment() {
       tourSuccess.push(tourComplete);
       localStorage.setItem("tourSuccess", JSON.stringify(tourSuccess));
       localStorage.removeItem("total");
-      alert("Đặt  tourthành công! Chúng tôi sẽ sớm liên hệ với bạn, xin cảm ơn");
+      alert("Đặt  tour thành công! Chúng tôi sẽ sớm liên hệ với bạn, xin cảm ơn");
       window.location.href = "index.html";
 }
