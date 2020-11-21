@@ -1,55 +1,48 @@
 function getInfo() {
-
   var date = document.getElementById("date").value;
   var d = document.getElementById("numPeople");
   var person = d.options[d.selectedIndex].text;
   var e = document.getElementById("destination");
   var destination = e.options[e.selectedIndex].text;
 
-  const listTour = JSON.parse(localStorage.getItem('listTour'));
+  const listTour = JSON.parse(localStorage.getItem("listTour"));
   var customer = JSON.parse(localStorage.getItem("customer")) || [];
-  
-  if(customer.length == 0 ){
-    alert('Vui lòng đăng nhập');
-    window.location.href = 'index.html';
-  }
-  else if(date == ""){
-    alert("Vui lòng chọn ngày!")
-} 
 
-else {
-  
-  const listTourChoice = listTour.filter(data => {
-    if (data.name == destination ) {
-      console.log(destination )
-      return true;
-  
-    }
-    return false;
-  })
-  console.log(listTourChoice)
-  if (listTourChoice.length) {
-          Choice = {
-            idcustomer: customer[0].id,
-            email: customer[0].email,
-            dateGo: date,
-            person: person,
-            destination: destination,
-          }
-          listTourChoice.push(Choice);
-    localStorage.setItem('listTourChoice', JSON.stringify(listTourChoice));
-     window.location.href = 'booking.html';
+  if (customer.length == 0) {
+    alert("Vui lòng đăng nhập");
+    window.location.href = "index.html";
+  } else if (date == "") {
+    alert("Vui lòng chọn ngày!");
   } else {
-    alert('Đã hết tour')
+    const listTourChoice = listTour.filter((data) => {
+      if (data.name == destination) {
+        console.log(destination);
+        return true;
+      }
+      return false;
+    });
+    console.log(listTourChoice);
+    if (listTourChoice.length) {
+      Choice = {
+        idcustomer: customer[0].id,
+        email: customer[0].email,
+        dateGo: date,
+        person: person,
+        destination: destination,
+      };
+      listTourChoice.push(Choice);
+      localStorage.setItem("listTourChoice", JSON.stringify(listTourChoice));
+      window.location.href = "booking.html";
+    } else {
+      alert("Đã hết tour");
+    }
   }
-}
-
 }
 //booking
 function load() {
-  tour = JSON.parse(localStorage.getItem('listTourChoice'));
+  tour = JSON.parse(localStorage.getItem("listTourChoice"));
 }
-if (localStorage.getItem('listTourChoice') != null) {
+if (localStorage.getItem("listTourChoice") != null) {
   load();
 }
 
@@ -60,7 +53,7 @@ function functionBooking() {
     listTour += `
            <div class="col-md-4 col-sm-6 single">
            <div class="product">
-           <a href="detail.html" class="text-center">
+           <a href="detail.html?tour_id=${tour[i].id}" class="text-center">
                <div class="product-img">
                    <img class="img-responsive" src="${tour[i].img}" style="height: 400px;width: 415px;">                            
                </div>
@@ -102,7 +95,7 @@ function functionBooking() {
   }
 }
 function order(id) {
-  const tourBooking = tour.filter(data => data.id === id)
-  localStorage.setItem('tourBooking', JSON.stringify(tourBooking));
-  alert("Đã thêm Tour! Vui lòng kiểm tra Tour!")
+  const tourBooking = tour.filter((data) => data.id === id);
+  localStorage.setItem("tourBooking", JSON.stringify(tourBooking));
+  alert("Đã thêm Tour! Vui lòng kiểm tra Tour!");
 }

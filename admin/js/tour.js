@@ -106,12 +106,11 @@ function showTour(){
                 </td>
 
                 <td>${tour[i].price}</td>
-                <td>${tour[i].date}</td>
+                <td>${tour[i].datetour}</td>
                 <td>${tour[i].note}</td>
-                <td>${tour[i].status}</td>
 
                 <td>		  
-                    <button type="button" data-toggle="modal" data-target="#updateModal"  class="btn btn-success">
+                    <button type="button" onclick="editTour(${tour[i].id})" data-toggle="modal" data-target="#updateModal"  class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
@@ -158,7 +157,7 @@ function deleteTour(id) {
     window.location.reload();
 }
 // Edit Tour 
-function editTour(i){
+var editTour = function(i){
     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
     var k = tour[i];
     document.getElementById("idd").value = k.id;
@@ -168,18 +167,40 @@ function editTour(i){
     document.getElementById("timesd").value = k.date;
     document.getElementById("noted").value = k.note;
     document.getElementById("idd").setAttribute("disabled","disabled");
-}
-function submitUpdate() {
-    var k = tour[i];
-    k.id= document.getElementById("idd").value;
-    k.name= document.getElementById("named").value;
-    k.img= document.getElementById("imgd").value;
-    k.price= document.getElementById("priced").value;
-    k.date= document.getElementById("timesd").value;
-    k.note= document.getElementById("noted").value;
-    //document.getElementById("idd").setAttribute("disabled","disabled");
-    localStorage.setItem('listTour', JSON.stringify(tour));
+    document.getElementById("submitUpdate").innerHTML = 
+     `<button type="button" onclick="editok(${id})" class="btn btn-success">save</button>`;
 }
 
+var k;
+function editok() {
+    
+    var tour = JSON.parse(localStorage.getItem("listTour"));
 
-
+    k = tour;
+    for (i in k) {
+        if (k[i].id == k[0].id) {
+            k[i].id= document.getElementById("idd").value;
+    k[i].name= document.getElementById("named").value;
+    k[i].img= document.getElementById("imgd").value;
+    k[i].price= document.getElementById("priced").value;
+    k[i].date= document.getElementById("timesd").value;
+    k[i].note= document.getElementById("noted").value;
+        }
+    }
+    localStorage.setItem("listTour", JSON.stringify(k));
+    alert("Cập nhật thành công!!!");
+    window.location.href = "tour.html"
+}
+// function editok(i) {
+//     var tour = JSON.parse(localStorage.getItem("listTour")) || [];
+//     var k = tour[i];
+//     k.id= document.getElementById("idd").value;
+//     k.name= document.getElementById("named").value;
+//     k.img= document.getElementById("imgd").value;
+//     k.price= document.getElementById("priced").value;
+//     k.date= document.getElementById("timesd").value;
+//     k.note= document.getElementById("noted").value;
+//     //document.getElementById("idd").setAttribute("disabled","disabled");
+//     localStorage.setItem('listTour', JSON.stringify(tour));
+//     window.location.reload();
+// }
