@@ -20,38 +20,39 @@ function payment() {
     var tourSuccess = JSON.parse(localStorage.getItem("tourSuccess")) || [];
     
     var user = JSON.parse(localStorage.getItem("user"));
-    var listTourChoice = JSON.parse(localStorage.getItem("listTourChoice"));
+    var choice = JSON.parse(localStorage.getItem("listTourChoice"));
 
       for (i in user) {
         if (user[i].id == customer[0].id) {
-            for(e in listTourChoice) {
-                if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
-                    alert("Cật nhập thông tin tài khoản! ")  
+            for(e in choice) {
+                // if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
+                //     alert("Cật nhập thông tin tài khoản! ")  
                 
-                } else {
+                // } else {
                     
                     for (j = 0; j <= tourSuccess.length; j++) {
                         tourComplete = {
                           id: j,
-                          dateGo: listTourChoice[e].dateGo,
-                          person: listTourChoice[e].person,
-                          destination: listTourChoice[e].destination,
+                          dateGo: choice[e].dateGo,
+                          person: choice[e].person,
+                          destination: choice[e].destination,
                           // total: total,
-                          idCustomer: listTourChoice[e].id,
+                          idCustomer: choice[e].idCustomer,
                           email: user[i].email,
                           name: user[i].name,
                           contact: user[i].contact,
                           address: user[i].address,
-                          status: "Đang chờ xử lý",
+                          status: "Waiting",
                           isActive: false,
                         };
                     }
                 }
-            }
+            // }
         }
       }
       tourSuccess.push(tourComplete);
       localStorage.setItem("tourSuccess", JSON.stringify(tourSuccess));
+      localStorage.removeItem("listTourChoice");
       localStorage.removeItem("total");
       alert("Đặt  tour thành công! Chúng tôi sẽ sớm liên hệ với bạn, xin cảm ơn");
       window.location.href = "index.html";

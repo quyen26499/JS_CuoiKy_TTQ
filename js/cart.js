@@ -73,11 +73,13 @@ function total() {
   $("#sub").text(sum);
   return sum;
 }
-function cancle(){
-    localStorage.removeItem('tourBooking');
-    window.location.href = 'booking.html';
-  }
-  function payment(){
-    window.location.href = 'payment.html';
-  }
+
+}
+
+function cancelBooking(){
+  localStorage.removeItem('tourBooking');
+  window.location.href = 'booking.html';
+}
+function paymentBooking(){
+  window.location.href = 'payment.html';
 }

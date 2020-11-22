@@ -24,7 +24,7 @@ function getInfo() {
     console.log(listTourChoice);
     if (listTourChoice.length) {
       Choice = {
-        idcustomer: customer[0].id,
+        idCustomer: customer[0].id,
         email: customer[0].email,
         dateGo: date,
         person: person,
