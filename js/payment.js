@@ -1,16 +1,29 @@
 function onloadCompleted() {
     var tour = JSON.parse(localStorage.getItem("tourBooking"));
+    var total = JSON.parse(localStorage.getItem("total"));
     var res1 = '';
+    for(i in tour){
+    var name = tour[i].name;
+    var person = tour[i].person;
+    var price = parseFloat(tour[i].price);
+    var img = tour[i].img;
+    var datetour = tour[i].datetour;
+    var date = tour[i].dateGo;
     var img = `
         <img src="${tour[0].img}" alt="Card image cap" style="width: 80px; height: 80px;"> `;
-    var row = "<tr>";
-    row += "<td> " + img + "</td>";
-    row += `<td>${tour[0].name}</td>`;
-    row += `<td>${tour[0].date} </td>`;
-    row += `<td>${tour[0].price} </td>`;
-    row += `<td>${tour[0].price} VND </td>`;
+   
+    let row = "<tr class='table-success'>";
+  
+    row += "<td>" + img + "</td>";
+    row += "<td>" + name + "</td>";
+    row += "<td>" + datetour + " Ngày</td>";
+    row += "<td>" + date + "</td>";
+    row += "<td>" + person + "</td>";
+    row += "<td>" + price + " VNĐ</td>";
+    row += "<td>" + total + " VNĐ</td>";
     row += "</tr>";
     res1 += row;
+    }
     document.getElementById("tab").innerHTML = res1;
 }
 function payment() {
