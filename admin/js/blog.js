@@ -11,16 +11,16 @@ function showBlog(){
                 </td>
 
                 <td>${blog[i].con}</td>
-                <td>${blog[i].date}</td>
+                <td>${blog[i].dte}</td>
                 
 
                 <td>      
-                    <button type="button" onclick="editBlog(${i})" class="btn btn-success">
+                    <button type="button" onclick="editBlog(${blog[i].id})" class="btn btn-success">
                         <i class="fas fa-edit"></i>
                     </button>
                 </td>
                 <td>      
-                <button type="button" onclick="deleteBlog(${i})" class="btn btn-danger">
+                <button type="button" onclick="deleteBlog(${blog[i].id})" class="btn btn-danger">
                     <i class="fas fa-times"></i>
                 </button>
             </td>
@@ -30,39 +30,34 @@ function showBlog(){
         document.getElementById("manager-blog").innerHTML += html;
     }
 }
-
 var id;
 function addBlog(){
-    var blog = JSON.parse(localStorage.getItem("listBlog")) || [];
+var blog = JSON.parse(localStorage.getItem("listBlog")) || [];
 
-    for (i = 0; i <= blog.length; i++) {
-        id = i+1;
-    }
+for (i = 0; i <= blog.length; i++) {
+    id = i+1;
+}
 
-    var objBlog = {
-        id: id,
-        title : document.getElementById("title").value,
-        img: document.getElementById("img").value,
-        date: document.getElementById("date").value,
-        con: document.getElementById("con").value,
-    }
-
-    blog.push(objBlog);
-    localStorage.setItem('listBlog', JSON.stringify(blog));
-    window.location.reload();
-    console.log(blog);
+var Blog = {
+    id: id,
+    title : document.getElementById("title").value,
+    img: document.getElementById("img").value,
+    dte: document.getElementById("dte").value,
+    con: document.getElementById("con").value,
+}
+blog.push(Blog);
+localStorage.setItem('listBlog', JSON.stringify(blog));
+//Save();
+window.location.reload();
+console.log(blog);
 }
 
 //Xóa Blog 
-function deleteBlog(id) {
-    var tour = JSON.parse(localStorage.getItem("listBlog")) || [];
-
-    tour = tour;
-    tour.splice(id,1);
-    localStorage.setItem('listBlog',JSON.stringify(tour));
-    window.location.reload();
+var deleteBlog = function(i){
+blog.splice(i,1);
+localStorage.setItem('88',JSON.stringify(blog));
+window.location.reload();
 }
-
 var submitUpdate = function(i){
 var k = blog[i];
 k.id= document.getElementById("idd").value;
@@ -76,5 +71,5 @@ window.location.reload();
 
 }
 
-// //hi
+//hi
 
