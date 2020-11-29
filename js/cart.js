@@ -7,7 +7,7 @@ function onloadCompleted() {
   var res1 = '';
   for (i in tour) {
     var name = tour[i].name;
-    var person = tour[i].datetour;
+    var person = tour[i].person;
     var price = parseFloat(tour[i].price);
     var img = tour[i].img;
     var datetour = tour[i].datetour;
@@ -26,7 +26,6 @@ function onloadCompleted() {
     var ii = i;
     ii++;
     let row = "<tr class='table-success'>";
-  
     row += "<td>" + html + "</td>";
     row += "<td>" + name + "</td>";
     row += "<td>" + datetour + " Ngày</td>";

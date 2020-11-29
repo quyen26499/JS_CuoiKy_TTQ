@@ -50,5 +50,5 @@ function order(id) {
   const tourData = JSON.parse(localStorage.getItem("listTour"));
   const tourBooking = tourData.filter((data) => data.id === id);
     localStorage.setItem('tourBooking', JSON.stringify(tourBooking));
-    window.location.href = 'payment.html';
+    window.location.href = 'cart.html';
 }
