@@ -28,9 +28,7 @@ function show() {
         var html =`
             <tr>
                 <td>${user[i].id}</td>
-                <td>
-                    <img src="${user[i].img}" width=50px; height=50px;>
-                </td>
+
                 <td>${user[i].email}</td>
                 <td>${user[i].name}</td>
                 <td>${user[i].contact}</td>
@@ -38,7 +36,6 @@ function show() {
                 <td>		  
                     <button type="button" onclick="del(${i})" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
                 </td>
-                <td>${user[i].pass}</td>
             </tr>
         `;
         

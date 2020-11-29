@@ -38,10 +38,10 @@ function payment() {
       for (i in user) {
         if (user[i].id == customer[0].id) {
             for(e in choice) {
-                // if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
-                //     alert("Cật nhập thông tin tài khoản! ")  
+                if (user[i].name != "" || user[i].contact == "" || user[i].address == "") {
+                    alert("Cật nhập thông tin tài khoản! ")  
                 
-                // } else {
+                } else {
                     
                     for (j = 0; j <= tourSuccess.length; j++) {
                         tourComplete = {
@@ -49,7 +49,7 @@ function payment() {
                           dateGo: choice[e].dateGo,
                           person: choice[e].person,
                           destination: choice[e].destination,
-                          // total: total,
+                          total: total,
                           idCustomer: choice[e].idCustomer,
                           email: user[i].email,
                           name: user[i].name,
@@ -60,7 +60,7 @@ function payment() {
                         };
                     }
                 }
-            // }
+            }
         }
       }
       tourSuccess.push(tourComplete);

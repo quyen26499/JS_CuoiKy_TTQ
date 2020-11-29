@@ -7,9 +7,6 @@ function loadOrder()  {
             var html = `
             <tr>
                 <td>${success[i].id}</td>
-                <td>${success[i].destination}</td>
-
-
                 <td><img src="${success[i].img}" width=35px; height=35px;> ${success[i].destination} (${success[i].date})</td>
                 <td>${success[i].dateGo}</td>
                 <td>${success[i].person}</td>

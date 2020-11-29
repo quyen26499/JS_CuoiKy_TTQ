@@ -1,7 +1,7 @@
 var html = `
     <div class="pt-4 pb-4 bg-white">
         <center>
-            <img class="img-responsive" src="https://vnn-imgs-f.vgcloud.vn/2020/03/23/11/trend-avatar-1.jpg" alt="" id="imgUser" width="80%">
+            <img class="img-responsive" src="" alt="" id="imgUser" width="80%">
         </center>
         <h6 class="user-title p-3" align="center" id="nameUser">
             

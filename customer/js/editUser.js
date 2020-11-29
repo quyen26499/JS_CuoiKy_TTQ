@@ -33,7 +33,7 @@ function btnUpdate() {
             account[i].name = document.getElementById("name").value;
             account[i].contact = document.getElementById("contact").value;
             account[i].address = document.getElementById("address").value;
-            account[i].img = document.getElementById("img").value;
+            account[i].img = image;
         }
     }
     localStorage.setItem("user", JSON.stringify(account));
